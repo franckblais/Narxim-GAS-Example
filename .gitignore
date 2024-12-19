@@ -14,3 +14,4 @@ Developer
 *.suo
 *.xcodeproj
 *.xcworkspace
+.vsconfig

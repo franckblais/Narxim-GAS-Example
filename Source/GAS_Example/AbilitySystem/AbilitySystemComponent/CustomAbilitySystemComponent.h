@@ -24,6 +24,12 @@ public:
 	// Wrapper for the "GetOrCreateAttributeSubobject" function. Returns the specified Attribute Set / creates one if it isn't found.
 	const UAttributeSet* GetOrCreateAttributeSet(const TSubclassOf<UAttributeSet>& InAttributeSet);
 
+	/**
+	 * Update all abilities and effects to reach the newly defined level.
+	 * @param NewLevel New Level as Float. Will be floored to only Complete level will be taken in account
+	 */
+	virtual void LevelUpEffectsAndAbilities(const float NewLevel);
+
 protected:
 	
 	bool AbilitySystemDataInitialized = false;

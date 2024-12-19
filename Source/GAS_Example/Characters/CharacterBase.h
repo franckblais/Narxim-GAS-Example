@@ -8,6 +8,7 @@
 #include "GAS_Example/AbilitySystem/Data/AbilitySystemData.h"
 #include "CharacterBase.generated.h"
 
+class UCustomAbilitySystemComponent;
 // Character Base is a template class that contains all shared logic for "Player Characters" and "Non Player Characters".
 // This Class is Abstract and should not be used directly! (Not-Blueprintable)
 UCLASS(Abstract, NotBlueprintable)
@@ -33,6 +34,6 @@ protected:
 	// Creates a pointer to the Ability System Component associated with this Character.
 	// Player Characters will set this in OnRep_PlayerState() locally, and in OnPossessed() server side.
 	// Non Player Characters will set this in its constructor.
-	UPROPERTY(BlueprintReadOnly)
-	UAbilitySystemComponent* AbilitySystemComponent;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	TObjectPtr<UCustomAbilitySystemComponent> AbilitySystemComponent;
 };
